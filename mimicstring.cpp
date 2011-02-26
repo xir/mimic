@@ -60,7 +60,16 @@ int main( int argc, char* argv[])
   {
     cout << *iit << " ";
   }
-  cout << wordorder[startkey].front();
+  for (int k = 0; k<100; ++k)
+  {
+    int valsize =wordorder[startkey].size();
+    string place = wordorder[startkey].at(rand()%(valsize));
+    startkey.pop_front();
+    startkey.push_back(place);
+    cout << place << " ";
+     
+  }
+  cout << endl;
   return 0;
 }
 

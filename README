@@ -1,3 +1,5 @@
 Program for college to generate garbage text based on word-word probabilities
 
 very much in progress
+
+make with 'make' run with './mimic n' to make n-grams

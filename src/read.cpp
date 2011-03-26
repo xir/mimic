@@ -1,16 +1,21 @@
+#include<fstream>
+#include<cstdlib>
+#include<iostream>
+
 #include "read.h"
 int readCommandLine(int argc, char* argv[], vector<string> & words, unsigned int & numwords)
 {
-  if (argc==2 || argc==3)
+  if (argc==3 || argc==4)
   {
-    if (argc==3)
+    if (argc==4)
     {
-      words=read(argv[2]);
+      words=read(argv[3]);
     }
-    else if (argc==2)
+    else if (argc==3)
     {
       words = read("Example.txt");
     }
+
     int wordssize=words.size();
     if (atoi(argv[1])==0)
       numwords=0;
@@ -29,16 +34,12 @@ int readCommandLine(int argc, char* argv[], vector<string> & words, unsigned int
 
 void usage()
 {
-    cout << "usage: ./mimic [integer n>0:default=1] \
-      [filename:default=Example.txt]"<< endl;
-    cout << "for n =:";
-    cout << "0 - output words based on their frequency"<< endl;
-    cout << "1 - output words based on their frequency of occuring after 1\
-      previous word" << endl;
-    cout << "2 - output words based on their frequency of occuring after 2\
-      previous words" << endl;
-    cout << "n - output words based on their frequency of occuring after n\
-      previous words" << endl;
+  cout << "usage: ./mimic n word [filename]"<< endl;
+  cout << "where:"<<endl;
+  cout << "n determines what n-gram to make: 0-gram, 1-gram, 2-gram" <<endl;
+  cout << "(Defaults to 1 if out of bounds)" << endl;
+  cout << "word is the word to consider in the output" <<endl;
+  cout << "filename is optional, default is Example.txt" <<endl;
 }
 
 vector<string> read(const char* filename)

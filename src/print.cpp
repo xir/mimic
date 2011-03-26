@@ -1,3 +1,4 @@
+#include<iostream>
 #include "print.h"
 
 void print(const vector<string> & v)

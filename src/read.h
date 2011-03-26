@@ -1,12 +1,8 @@
-#include<fstream>
-#include<cstdlib>
-#include<iostream>
+#ifndef read_h
+#define read_h
 #include<vector>
 #include<string>
 using namespace std;
-
-#ifndef read_h
-#define read_h
 
 int readCommandLine(int argc, char* argv[], vector<string> & words,
     unsigned int & numwords);

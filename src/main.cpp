@@ -19,16 +19,17 @@ int main( int argc, char* argv[])
 
   readCommandLine(argc, argv, words, numwords);
 
-  map<list<string>, vector<string> > wordorder;
-  list<string> key, startkey;
-
-  genKey(key, startkey, words, numwords);
-
-  genWordOrder(wordorder, words, key, numwords);
-
   vector<string> sentence;
-
-  genOutput(startkey, wordorder, sentence);
+  if (numwords==0)
+    sentence=words;
+  else
+  {
+    map<list<string>, vector<string> > wordorder;
+    list<string> key, startkey;
+    genKey(key, startkey, words, numwords);
+    genWordOrder(wordorder, words, key, numwords);
+    genOutput(startkey, wordorder, sentence);
+  }
 
   testWord test;
   test.set("the");

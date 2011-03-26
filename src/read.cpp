@@ -3,7 +3,8 @@
 #include<iostream>
 
 #include "read.h"
-int readCommandLine(int argc, char* argv[], vector<string> & words, unsigned int & numwords)
+int readCommandLine(int argc, char* argv[], vector<string> & words,
+    unsigned int & numwords)
 {
   if (argc==3 || argc==4)
   {
@@ -60,6 +61,5 @@ vector<string> read(const char* filename)
   }
   else
     cout << "Error opening file" << endl;
-    //cout << "Omit the second argument to use the default file" << endl;
     exit(2);
 }

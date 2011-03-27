@@ -5,15 +5,16 @@
 #include<string>
 #include<vector>
 #include<map>
-using namespace std;
 
-void genKey(list<string> & key, list<string> & startkey,
-    vector<string> & words, const unsigned int numwords);
-void genWordOrder(map <list<string>, vector<string> > & wordorder,
-    const vector<string> & words, list<string> & key,
+void genKey(std::list<std::string> & key, std::list<std::string> & startkey,
+    std::vector<std::string> & words, const unsigned int numwords);
+void genWordOrder(std::map <std::list<std::string>,
+    std::vector<std::string> > & wordorder,
+    const std::vector<std::string> & words, std::list<std::string> & key,
     const unsigned int numwords);
-void genOutput(list<string> & startkey,
-    map <list<string>, vector<string> > & wordorder,
-    vector<string> &sentence);
+void genOutput(std::list<std::string> & startkey,
+    std::map <std::list<std::string>, 
+    std::vector<std::string> > & wordorder,
+    std::vector<std::string> & sentence);
 
 #endif

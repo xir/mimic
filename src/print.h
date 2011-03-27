@@ -4,7 +4,6 @@
 #include<string>
 #include<list>
 using namespace std;
-void print(const vector<string> & v);
-void print(list<string> & l);
-
+void print(const std::vector<std::string> & v);
+void print(std::list<std::string> & l);
 #endif

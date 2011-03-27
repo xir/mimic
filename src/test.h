@@ -4,12 +4,11 @@ class testWord
 {
   public:
     void set(string);
-    void countOccurences(vector<string> &);
     void getVariance(vector<string> &);
-
     void printCount(){cout << count;}
     void printMean(){cout << mean;}
     void printVariance(){cout << variance;}
+    void outputVariance(vector<string> & sentence, string & word);
 
   private:
     string word;
@@ -17,6 +16,5 @@ class testWord
     double mean;
     double variance;
     double diffsum;
-
 };
 #endif

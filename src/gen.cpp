@@ -41,7 +41,7 @@ void genOutput(list<string> & startkey,
 
   for (list<string>::iterator iit = startkey.begin(); iit != startkey.end(); ++iit)
     sentence.push_back(*iit);
-  for (int k = 0; k<100000; ++k)
+  for (int k = 0; k<10000000; ++k)
   {
     int valsize =wordorder[startkey].size();
     if (valsize == 0)

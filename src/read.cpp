@@ -1,4 +1,9 @@
+/* reads the command line to set the number of words to look at when 
+ * generating n-grams. Print usage otherwise
+ */
+
 #include<fstream>
+#include<sstream>
 #include<cstdlib>
 #include<iostream>
 
@@ -13,6 +18,7 @@ int readCommandLine(int argc, char* argv[], vector<string> & words,
       words=read(argv[2]);
     else
       words = read();
+
 
     int wordssize=words.size();
     if (atoi(argv[1])==0)

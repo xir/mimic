@@ -1,11 +1,14 @@
+/* Generates a map of a list of strings to a vector of strings being all the
+ * words that follow the list of strings in the input text
+ */
+
 #include<cstdlib>
 #include "gen.h"
-#include "print.h"
 
 using namespace std;
 
-void genKey(list<string> & key, list<string> & startkey, vector<string> & words,
-    const unsigned int numwords)
+void genKey(list<string> & key, list<string> & startkey,
+    vector<string> & words, const unsigned int numwords)
 {
   if (numwords == 0)
     startkey.push_back("for");
@@ -18,7 +21,8 @@ void genKey(list<string> & key, list<string> & startkey, vector<string> & words,
 }
 
 void genWordOrder(map<list<string>, vector<string> > & wordorder,
-    const vector<string> & words, list<string> & key, const unsigned int numwords)
+    const vector<string> & words, list<string> & key,
+    const unsigned int numwords)
 {
   if (numwords != 0)
   {
@@ -38,12 +42,14 @@ void genOutput(list<string> & startkey,
     vector<string> & sentence)
 {
   srand (time(NULL));
+  int sentenceLength=100000;
 
-  for (list<string>::iterator iit = startkey.begin(); iit != startkey.end(); ++iit)
+  for (list<string>::iterator iit = startkey.begin(); iit != startkey.end();
+      ++iit)
     sentence.push_back(*iit);
-  for (int k = 0; k<10000000; ++k)
+  for (int k = 0; k<sentenceLength; ++k)
   {
-    int valsize =wordorder[startkey].size();
+    int valsize = wordorder[startkey].size();
     if (valsize == 0)
     {
       break;
@@ -53,5 +59,4 @@ void genOutput(list<string> & startkey,
     startkey.push_back(place);
     sentence.push_back(place);
   }
-  //print(sentence);
 }

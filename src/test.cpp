@@ -1,3 +1,7 @@
+/* takes a sentence and prints the mean frequency of occurence and the 
+ * variance
+ */
+
 #include<string>
 #include<vector>
 #include<iostream>

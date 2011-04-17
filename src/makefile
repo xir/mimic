@@ -1,6 +1,6 @@
 CC=g++
 
-CFLAGS=-c -Wall -O3
+CFLAGS=-c -Wall -O3 -pedantic
 
 all: mimic
 

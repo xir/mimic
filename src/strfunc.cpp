@@ -1,3 +1,5 @@
+/* Converts a string to lowercase */
+
 #include<string>
 #include "strfunc.h"
 

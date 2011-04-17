@@ -38,6 +38,7 @@ int main( int argc, char* argv[])
   map<list<string>, vector<string> > wordorder;
   list<string> key, startkey;
   vector<string> sentence;
+
   if (numwords==0)
     sentence=words;
   else
@@ -47,22 +48,35 @@ int main( int argc, char* argv[])
     genOutput(startkey, wordorder, sentence);
   }
 
-  /*
-  list<string> shor;
-  shor.push_back("interval");
-  print(wordorder[shor]);
-  */
   testWord test;
   cout << "Sentence length is: "<< sentence.size() << endl;
-  string lst;
-  cout << "Enter word to search for (0 to quit):" << endl;
-  while (lst != "0")
+  string yesno;
+  cout << "Would you like to print the sentence? (y/n)";
+  while(1)
   {
-    getline (cin,lst);
-    if (lst!= "0")
-      strLower(lst);
-      test.outputVariance(sentence,lst);
+    getline (cin, yesno);
+    if (yesno == "y")
+    {
+      print(sentence);
+      break;
+    }
+    else if (yesno == "n")
+      break;
+    else
+      cout << "Please enter (y/n):";
+  }
+
+  string input;
+  while (input != "0")
+  {
+    cout << "Enter word to search for (0 to quit):" << endl;
+    getline (cin,input);
+    if (input!= "0")
+    {
+      strLower(input);
+      test.outputVariance(sentence,input);
+      cout << endl;
+    }
   }
   return 0;
 }
-

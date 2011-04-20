@@ -1,5 +1,30 @@
-Program for college to generate garbage text based on word-word probabilities
+Neuroscience Project to generate sentences based on the word-pair
+frequencies in a sample and analyse the generated sentence by calculating
+the mean and variance of the inter-word intervals.
 
-very much in progress
+in src/
 
-make with 'make' run with './mimic n' to make n-grams
+  make
+
+to make, and
+
+  ./mimic n [filename]
+
+to generate words looking at the previous n words. The filename is optional,
+default is 'Example.txt'. It will use a lot of memory if you start to look
+at large numbers of previous words, ie. previous 1000 words of a 20k words
+sample. If n is out of range it reverts to 1, if it is not a number it
+reverts to 0.
+
+The user is then prompted if they want to print the sentence and which words
+they would like to view information about. This can be used to compare
+english text with generated text of different complexities.
+
+The default maximum sentence length is 100001, if the program doesn't have
+any frequency data before this length it will terminate. This can happen
+because we have no data about what word will follow the final word in the
+input *if* it is its first occurence (looking at one previous word). This is
+much more likely to happen looking at multiple words, if you look at enough
+words in a row when generating the next word you can/will get stuck on a 
+path to the end of the file. There seemed like no way to resolve this and
+maintain the proper frequencies.

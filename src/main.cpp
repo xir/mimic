@@ -3,23 +3,12 @@
  * the variance of the intervals.
  */
 
-/* Notes
- * If the last word of the input is the first occurence of that word, 
- * generation of the 1-gram sentence will probably get cut short.
- * To omit the word would not be in keeping with the frequency of occurences
- * of words after the previous word.
- * Similar problems can occur when dealing with higher order n-grams where 
- * you can get stuck on a path that leads to the end of the file and
- * terminates. 
- */
-
 #include<iostream>
 #include<map>
 #include<list>
 #include<vector>
 #include<string>
 
-//debug only
 #include "print.h"
 #include "gen.h"
 #include "read.h"

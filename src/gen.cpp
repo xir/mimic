@@ -11,7 +11,7 @@ void genKey(list<string> & key, list<string> & startkey,
     vector<string> & words, const unsigned int numwords)
 {
   if (numwords == 0)
-    startkey.push_back("for");
+    startkey.push_back(words[0]);
   else
   {
     for (unsigned int j = 0;j<numwords;++j)
@@ -51,9 +51,7 @@ void genOutput(list<string> & startkey,
   {
     int valsize = wordorder[startkey].size();
     if (valsize == 0)
-    {
       break;
-    }
     string place = wordorder[startkey].at(rand()%(valsize));
     startkey.pop_front();
     startkey.push_back(place);

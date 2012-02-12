@@ -25,4 +25,4 @@ test.o: test.cpp
 strfunc.o: strfunc.cpp
 	$(CC) $(CFLAGS) strfunc.cpp
 clean: 
-	rm -rf *o mimic
+	rm -rf *.o mimic
